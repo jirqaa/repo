@@ -1,0 +1,988 @@
+<sixx sixx.version="1.0">
+	<sixx.object sixx.id="0" sixx.type="DaskalosProject" >
+		<sixx.object sixx.id="1" sixx.name="name" sixx.type="String" >Eshop</sixx.object>
+		<sixx.object sixx.id="2" sixx.name="author" sixx.type="String" >Jiri Koci</sixx.object>
+		<sixx.object sixx.id="3" sixx.name="description" sixx.type="String" >Tento projekt ma predstavovat zaklad eshopu. V tomto eshopu si zakaznik muze objednat ruzne produkty. Tyto produkty je pote mozne videt v instanci objednavky a je mozne si vybrat ruzne dopravce pro doruceni teto objednavky. Jednotlivi dopravci maji ruznou dobu doruceni a cenu. V objednavce se pote vypocita celkova cena vsech produktu a ceny dopravy a take den doruceni&#44; kdy by zakaznik mel objednavku ocekavat. V eshopu pracuji zamestnanci. Zamestnanec muze byt zaroven i zakaznik eshopu&#44; jelikoz se zakaznici a zamestnanci ukladaji v oddelenych kolekcich. Zamestnanci maji ruzna opravneni podle jejich pozice v tomto eshopu. Podle techto opravneni maji pristup k ruznym datum a majetku firmy. </sixx.object>
+		<sixx.object sixx.id="4" sixx.name="workspaceVariables" sixx.type="Dictionary" >
+			<sixx.object sixx.id="5" sixx.type="Association" >
+				<sixx.object sixx.id="6" sixx.name="key" sixx.type="Symbol" >ZakazniciSet</sixx.object>
+				<sixx.object sixx.id="7" sixx.name="value" sixx.type="Set" >
+					<sixx.object sixx.id="8" sixx.type="Zakaznik" >
+						<sixx.object sixx.id="9" sixx.name="jmeno" sixx.type="String" >Josef</sixx.object>
+						<sixx.object sixx.id="10" sixx.name="prijmeni" sixx.type="String" >Pepik</sixx.object>
+						<sixx.object sixx.id="11" sixx.name="adresa" sixx.type="String" >Pepikov 12 42069</sixx.object>
+						<sixx.object sixx.id="12" sixx.name="objednavky" sixx.type="Set" >
+							<sixx.object sixx.id="13" sixx.type="Objednavka" >
+								<sixx.object sixx.id="14" sixx.name="cislo" sixx.type="SmallInteger" >154</sixx.object>
+								<sixx.object sixx.id="15" sixx.name="produkty" sixx.type="Bag" >
+									<sixx.object sixx.id="16" sixx.type="Produkt" >
+										<sixx.object sixx.id="17" sixx.name="cena" sixx.type="SmallInteger" >29</sixx.object>
+										<sixx.object sixx.id="18" sixx.name="popis" sixx.type="String" >Jsou to ponozky.</sixx.object>
+										<sixx.object sixx.id="19" sixx.name="nazev" sixx.type="String" >Ponozky</sixx.object>
+										<sixx.object sixx.id="20" sixx.name="ean" sixx.type="LargePositiveInteger" >6666666666666</sixx.object>
+									</sixx.object>
+									<sixx.object sixx.id="21" sixx.type="Produkt" >
+										<sixx.object sixx.id="22" sixx.name="cena" sixx.type="SmallInteger" >150</sixx.object>
+										<sixx.object sixx.id="23" sixx.name="popis" sixx.type="String" >Jsou to rukavice.</sixx.object>
+										<sixx.object sixx.id="24" sixx.name="nazev" sixx.type="String" >Rukavice</sixx.object>
+										<sixx.object sixx.id="25" sixx.name="ean" sixx.type="LargePositiveInteger" >6969696969420</sixx.object>
+									</sixx.object>
+								</sixx.object>
+								<sixx.object sixx.id="26" sixx.name="dopravce" sixx.type="Dopravce" >
+									<sixx.object sixx.id="27" sixx.name="nazev" sixx.type="String" >Zasilkovna</sixx.object>
+									<sixx.object sixx.id="28" sixx.name="dobaDoruceni" sixx.type="SmallInteger" >3</sixx.object>
+									<sixx.object sixx.id="29" sixx.name="cenaDopravy" sixx.type="SmallInteger" >79</sixx.object>
+								</sixx.object>
+								<sixx.object sixx.id="30" sixx.name="denObjednani" sixx.type="Date" >4 February 2024</sixx.object>
+							</sixx.object>
+						</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="31" sixx.type="Zakaznik" >
+						<sixx.object sixx.id="32" sixx.name="jmeno" sixx.type="String" >Karel</sixx.object>
+						<sixx.object sixx.id="33" sixx.name="prijmeni" sixx.type="String" >Pepik</sixx.object>
+						<sixx.object sixx.id="34" sixx.name="adresa" sixx.type="String" >Pepikov 12 42069</sixx.object>
+						<sixx.object sixx.id="35" sixx.name="objednavky" sixx.type="Set" >
+							<sixx.object sixx.id="36" sixx.type="Objednavka" >
+								<sixx.object sixx.id="37" sixx.name="cislo" sixx.type="SmallInteger" >213</sixx.object>
+								<sixx.object sixx.id="38" sixx.name="produkty" sixx.type="Bag" >
+									<sixx.object sixx.id="39" sixx.type="Produkt" >
+										<sixx.object sixx.id="40" sixx.name="cena" sixx.type="SmallInteger" >386</sixx.object>
+										<sixx.object sixx.id="41" sixx.name="popis" sixx.type="String" >Jsou to teplaky.</sixx.object>
+										<sixx.object sixx.id="42" sixx.name="nazev" sixx.type="String" >Teplaky</sixx.object>
+										<sixx.object sixx.id="43" sixx.name="ean" sixx.type="LargePositiveInteger" >7777777777777</sixx.object>
+									</sixx.object>
+									<sixx.object sixx.id="44" sixx.type="Produkt" >
+										<sixx.object sixx.id="45" sixx.name="cena" sixx.type="SmallInteger" >125</sixx.object>
+										<sixx.object sixx.id="46" sixx.name="popis" sixx.type="String" >Je to triko.</sixx.object>
+										<sixx.object sixx.id="47" sixx.name="nazev" sixx.type="String" >Triko</sixx.object>
+										<sixx.object sixx.id="48" sixx.name="ean" sixx.type="LargePositiveInteger" >9999999999999</sixx.object>
+									</sixx.object>
+									<sixx.object sixx.idref="16" ></sixx.object>
+								</sixx.object>
+								<sixx.object sixx.idref="26" sixx.name="dopravce" ></sixx.object>
+								<sixx.object sixx.id="49" sixx.name="denObjednani" sixx.type="Date" >12 December 2023</sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="50" sixx.type="Objednavka" >
+								<sixx.object sixx.id="51" sixx.name="cislo" sixx.type="SmallInteger" >124</sixx.object>
+								<sixx.object sixx.id="52" sixx.name="produkty" sixx.type="Bag" >
+									<sixx.object sixx.id="53" sixx.type="Produkt" >
+										<sixx.object sixx.id="54" sixx.name="cena" sixx.type="SmallInteger" >499</sixx.object>
+										<sixx.object sixx.id="55" sixx.name="popis" sixx.type="String" >Je to mikina.</sixx.object>
+										<sixx.object sixx.id="56" sixx.name="nazev" sixx.type="String" >Mikina</sixx.object>
+										<sixx.object sixx.id="57" sixx.name="ean" sixx.type="LargePositiveInteger" >8888888888888</sixx.object>
+									</sixx.object>
+									<sixx.object sixx.idref="21" ></sixx.object>
+								</sixx.object>
+								<sixx.object sixx.id="58" sixx.name="dopravce" sixx.type="Dopravce" >
+									<sixx.object sixx.id="59" sixx.name="nazev" sixx.type="String" >PPL</sixx.object>
+									<sixx.object sixx.id="60" sixx.name="dobaDoruceni" sixx.type="SmallInteger" >4</sixx.object>
+									<sixx.object sixx.id="61" sixx.name="cenaDopravy" sixx.type="SmallInteger" >89</sixx.object>
+								</sixx.object>
+								<sixx.object sixx.id="62" sixx.name="denObjednani" sixx.type="Date" >1 April 2024</sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="63" sixx.type="Objednavka" >
+								<sixx.object sixx.id="64" sixx.name="cislo" sixx.type="SmallInteger" >652</sixx.object>
+								<sixx.object sixx.id="65" sixx.name="produkty" sixx.type="Bag" >
+									<sixx.object sixx.idref="16" ></sixx.object>
+									<sixx.object sixx.idref="44" ></sixx.object>
+								</sixx.object>
+								<sixx.object sixx.idref="58" sixx.name="dopravce" ></sixx.object>
+								<sixx.object sixx.id="66" sixx.name="denObjednani" sixx.type="Date" >12 January 2024</sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="67" sixx.type="Objednavka" >
+								<sixx.object sixx.id="68" sixx.name="cislo" sixx.type="SmallInteger" >214</sixx.object>
+								<sixx.object sixx.id="69" sixx.name="produkty" sixx.type="Bag" >
+									<sixx.object sixx.idref="44" ></sixx.object>
+								</sixx.object>
+								<sixx.object sixx.idref="58" sixx.name="dopravce" ></sixx.object>
+								<sixx.object sixx.id="70" sixx.name="denObjednani" sixx.type="Date" >12 January 2024</sixx.object>
+							</sixx.object>
+						</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="71" sixx.type="Zakaznik" >
+						<sixx.object sixx.id="72" sixx.name="jmeno" sixx.type="String" >Jan</sixx.object>
+						<sixx.object sixx.id="73" sixx.name="prijmeni" sixx.type="String" >Novak</sixx.object>
+						<sixx.object sixx.id="74" sixx.name="adresa" sixx.type="String" >Pepikov 13 42069</sixx.object>
+						<sixx.object sixx.id="75" sixx.name="objednavky" sixx.type="Set" >
+							<sixx.object sixx.id="76" sixx.type="Objednavka" >
+								<sixx.object sixx.id="77" sixx.name="cislo" sixx.type="SmallInteger" >521</sixx.object>
+								<sixx.object sixx.id="78" sixx.name="produkty" sixx.type="Bag" >
+									<sixx.object sixx.idref="44" ></sixx.object>
+								</sixx.object>
+								<sixx.object sixx.idref="26" sixx.name="dopravce" ></sixx.object>
+								<sixx.object sixx.id="79" sixx.name="denObjednani" sixx.type="Date" >1 March 2024</sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="80" sixx.type="Objednavka" >
+								<sixx.object sixx.id="81" sixx.name="cislo" sixx.type="SmallInteger" >123</sixx.object>
+								<sixx.object sixx.id="82" sixx.name="produkty" sixx.type="Bag" >
+									<sixx.object sixx.idref="39" ></sixx.object>
+									<sixx.object sixx.idref="44" ></sixx.object>
+								</sixx.object>
+								<sixx.object sixx.idref="58" sixx.name="dopravce" ></sixx.object>
+								<sixx.object sixx.id="83" sixx.name="denObjednani" sixx.type="Date" >25 January 2024</sixx.object>
+							</sixx.object>
+						</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="84" sixx.type="Zakaznik" >
+						<sixx.object sixx.id="85" sixx.name="jmeno" sixx.type="String" >Arnost</sixx.object>
+						<sixx.object sixx.id="86" sixx.name="prijmeni" sixx.type="String" >Vesely</sixx.object>
+						<sixx.object sixx.id="87" sixx.name="adresa" sixx.type="String" >Ritka 42 25203</sixx.object>
+						<sixx.object sixx.id="88" sixx.name="objednavky" sixx.type="Set" >
+							<sixx.object sixx.id="89" sixx.type="Objednavka" >
+								<sixx.object sixx.id="90" sixx.name="cislo" sixx.type="SmallInteger" >222</sixx.object>
+								<sixx.object sixx.id="91" sixx.name="produkty" sixx.type="Bag" >
+									<sixx.object sixx.idref="53" ></sixx.object>
+									<sixx.object sixx.idref="16" ></sixx.object>
+								</sixx.object>
+								<sixx.object sixx.id="92" sixx.name="dopravce" sixx.type="Dopravce" >
+									<sixx.object sixx.id="93" sixx.name="nazev" sixx.type="String" >Ceska Posta</sixx.object>
+									<sixx.object sixx.id="94" sixx.name="dobaDoruceni" sixx.type="SmallInteger" >30</sixx.object>
+									<sixx.object sixx.id="95" sixx.name="cenaDopravy" sixx.type="SmallInteger" >59</sixx.object>
+								</sixx.object>
+								<sixx.object sixx.id="96" sixx.name="denObjednani" sixx.type="Date" >19 April 2024</sixx.object>
+							</sixx.object>
+						</sixx.object>
+					</sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="97" sixx.type="Association" >
+				<sixx.object sixx.id="98" sixx.name="key" sixx.type="Symbol" >DopravciSet</sixx.object>
+				<sixx.object sixx.id="99" sixx.name="value" sixx.type="Set" >
+					<sixx.object sixx.idref="92" ></sixx.object>
+					<sixx.object sixx.idref="26" ></sixx.object>
+					<sixx.object sixx.idref="58" ></sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="100" sixx.type="Association" >
+				<sixx.object sixx.id="101" sixx.name="key" sixx.type="Symbol" >ProduktSet</sixx.object>
+				<sixx.object sixx.id="102" sixx.name="value" sixx.type="Set" >
+					<sixx.object sixx.idref="53" ></sixx.object>
+					<sixx.object sixx.idref="21" ></sixx.object>
+					<sixx.object sixx.idref="44" ></sixx.object>
+					<sixx.object sixx.idref="16" ></sixx.object>
+					<sixx.object sixx.idref="39" ></sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="103" sixx.type="Association" >
+				<sixx.object sixx.id="104" sixx.name="key" sixx.type="Symbol" >ObjednavkySet</sixx.object>
+				<sixx.object sixx.id="105" sixx.name="value" sixx.type="Set" >
+					<sixx.object sixx.idref="13" ></sixx.object>
+					<sixx.object sixx.idref="36" ></sixx.object>
+					<sixx.object sixx.idref="50" ></sixx.object>
+					<sixx.object sixx.idref="63" ></sixx.object>
+					<sixx.object sixx.idref="89" ></sixx.object>
+					<sixx.object sixx.idref="76" ></sixx.object>
+					<sixx.object sixx.idref="80" ></sixx.object>
+					<sixx.object sixx.idref="67" ></sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="106" sixx.type="Association" >
+				<sixx.object sixx.id="107" sixx.name="key" sixx.type="Symbol" >ZamestnanciSet</sixx.object>
+				<sixx.object sixx.id="108" sixx.name="value" sixx.type="Set" >
+					<sixx.object sixx.id="109" sixx.type="Zamestnanec" >
+						<sixx.object sixx.id="110" sixx.name="jmeno" sixx.type="String" >Ludmila</sixx.object>
+						<sixx.object sixx.id="111" sixx.name="prijmeni" sixx.type="String" >Sura</sixx.object>
+						<sixx.object sixx.id="112" sixx.name="pozice" sixx.type="String" >Manazerka</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="113" sixx.type="Zamestnanec" >
+						<sixx.object sixx.id="114" sixx.name="jmeno" sixx.type="String" >Milan</sixx.object>
+						<sixx.object sixx.id="115" sixx.name="prijmeni" sixx.type="String" >Kugler</sixx.object>
+						<sixx.object sixx.id="116" sixx.name="pozice" sixx.type="String" >Web Specialist</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="117" sixx.type="Zamestnanec" >
+						<sixx.object sixx.id="118" sixx.name="jmeno" sixx.type="String" >Zdenek</sixx.object>
+						<sixx.object sixx.id="119" sixx.name="prijmeni" sixx.type="String" >Skopik</sixx.object>
+						<sixx.object sixx.id="120" sixx.name="pozice" sixx.type="String" >IT</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="121" sixx.type="Zamestnanec" >
+						<sixx.object sixx.id="122" sixx.name="jmeno" sixx.type="String" >Michal</sixx.object>
+						<sixx.object sixx.id="123" sixx.name="prijmeni" sixx.type="String" >Janku</sixx.object>
+						<sixx.object sixx.id="124" sixx.name="pozice" sixx.type="String" >Pracovnik skladu</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="125" sixx.type="Zamestnanec" >
+						<sixx.object sixx.id="126" sixx.name="jmeno" sixx.type="String" >Jiri</sixx.object>
+						<sixx.object sixx.id="127" sixx.name="prijmeni" sixx.type="String" >Florian</sixx.object>
+						<sixx.object sixx.id="128" sixx.name="pozice" sixx.type="String" >Pracovnik skladu</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="129" sixx.type="Zamestnanec" >
+						<sixx.object sixx.id="130" sixx.name="jmeno" sixx.type="String" >Lucie</sixx.object>
+						<sixx.object sixx.id="131" sixx.name="prijmeni" sixx.type="String" >Carhounova</sixx.object>
+						<sixx.object sixx.id="132" sixx.name="pozice" sixx.type="String" >Personalistka</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="133" sixx.type="Zamestnanec" >
+						<sixx.object sixx.id="134" sixx.name="jmeno" sixx.type="String" >Radek</sixx.object>
+						<sixx.object sixx.id="135" sixx.name="prijmeni" sixx.type="String" >Geier</sixx.object>
+						<sixx.object sixx.id="136" sixx.name="pozice" sixx.type="String" >CEO</sixx.object>
+					</sixx.object>
+				</sixx.object>
+			</sixx.object>
+		</sixx.object>
+		<sixx.object sixx.id="137" sixx.name="workspaceText" sixx.type="String" >&quot; ========= DOTAZY  ========= &quot;
+&quot;Kdo si objednal objednavku cislo 214&quot;
+	ZakazniciSet select: [:zak | zak objednavky anySatisfy: [:o | o cislo = 214]]
+
+&quot;Objednavky ve kterych bylo objednano triko&quot;
+	ObjednavkySet select: [:o | o produkty anySatisfy: [:prod | prod nazev = &#39;Triko&#39;]]
+
+&quot;Zakaznici kteri meli objednavku s cenou vyssi nez 500&quot;
+	ZakazniciSet select: [:zak | zak objednavky anySatisfy: [:o | o celkovaCena &gt; 500]]
+
+&quot; ========= PRAVIDLA ========= &quot;
+&quot;Vsechny produkty maji EAN&quot;
+&#40;ProduktSet select: [:prod | prod ean = &#39;&#39;]&#41; isEmpty
+
+&quot;Vsichni zamestnanci maji pozici&quot;
+&#40;ZamestnanciSet select: [:zam | zam pozice = &#39;&#39;]&#41; isEmpty
+
+&quot;Kazda objednavka ma alespon 1 produkt&quot;
+&#40;ObjednavkySet select: [:o | o produkty size = 0]&#41; isEmpty</sixx.object>
+		<sixx.object sixx.id="138" sixx.name="scriptText" sixx.type="String" >&quot;---- ZAMESTNANCI ----&quot;
+zam1 := Zamestnanec new.
+zam1 jmeno: &#39;Radek&#39;; prijmeni: &#39;Geier&#39;; pozice: &#39;CEO&#39;.
+
+zam2 := Zamestnanec new.
+zam2 jmeno: &#39;Zdenek&#39;; prijmeni: &#39;Skopik&#39;; pozice: &#39;IT&#39;.
+
+zam3 := Zamestnanec new.
+zam3 jmeno: &#39;Milan&#39;; prijmeni: &#39;Kugler&#39;; pozice: &#39;Web Specialist&#39;.
+
+zam4 := Zamestnanec new.
+zam4 jmeno: &#39;Ludmila&#39;; prijmeni: &#39;Sura&#39;; pozice: &#39;Manazerka&#39;.
+
+zam5 := Zamestnanec new.
+zam5 jmeno: &#39;Michal&#39;; prijmeni: &#39;Janku&#39;; pozice: &#39;Pracovnik skladu&#39;.
+
+zam6 := Zamestnanec new.
+zam6 jmeno: &#39;Jiri&#39;; prijmeni: &#39;Florian&#39;; pozice: &#39;Pracovnik skladu&#39;.
+
+zam7 := Zamestnanec new.
+zam7 jmeno: &#39;Lucie&#39;; prijmeni: &#39;Carhounova&#39;; pozice: &#39;Personalistka&#39;.
+
+ZamestnanciSet := Set new.
+ZamestnanciSet add: zam1; add: zam2; add: zam3; add: zam4; add: zam5; add: zam6; add: zam7.
+
+&quot;---- PRODUKTY ----&quot;
+prod1 := Produkt new.
+prod1 nazev: &#39;Triko&#39;; popis: &#39;Je to triko.&#39;; cena: 125; ean: 9999999999999.
+
+prod2 := Produkt new.
+prod2 nazev: &#39;Mikina&#39;; popis: &#39;Je to mikina.&#39;; cena: 499; ean: 8888888888888.
+
+prod3 := Produkt new.
+prod3 nazev: &#39;Teplaky&#39;; popis: &#39;Jsou to teplaky.&#39;; cena: 386; ean: 7777777777777.
+
+prod4 := Produkt new.
+prod4 nazev: &#39;Ponozky&#39;; popis: &#39;Jsou to ponozky.&#39;; cena: 29; ean: 6666666666666.
+
+prod5 := Produkt new.
+prod5 nazev: &#39;Rukavice&#39;; popis: &#39;Jsou to rukavice.&#39;; cena: 150; ean: 6969696969420.
+
+ProduktSet := Set new.
+ProduktSet add: prod1; add: prod2; add: prod3; add: prod4; add: prod5.
+
+&quot;---- DOPRAVCI ----&quot;
+dop1 := Dopravce new.
+dop1 nazev: &#39;Zasilkovna&#39;; dobaDoruceni: 3; cenaDopravy: 79.
+
+dop2 := Dopravce new.
+dop2 nazev: &#39;Ceska Posta&#39;; dobaDoruceni: 30; cenaDopravy: 59.
+
+dop3 := Dopravce new.
+dop3 nazev: &#39;PPL&#39;; dobaDoruceni: 4; cenaDopravy: 89.
+
+DopravciSet := Set new.
+DopravciSet add: dop1; add: dop2; add: dop3.
+
+&quot;---- OBJEDNAVKY ----&quot;
+o1 := Objednavka new.
+o1 cislo: 213; dopravce: dop1; denObjednani: &#39;12 12 2023&#39; asDate.
+o1 produkty add: prod1; add: prod3; add: prod4.
+
+o2 := Objednavka new.
+o2 cislo: 124; dopravce: dop3; denObjednani: &#39;4 1 2024&#39; asDate.
+o2 produkty add: prod2; add: prod5.
+
+o3 := Objednavka new.
+o3 cislo: 154; dopravce: dop1; denObjednani: &#39;2 4 2024&#39; asDate.
+o3 produkty add: prod4; add: prod5.
+
+o4 := Objednavka new.
+o4 cislo: 521; dopravce: dop1; denObjednani: &#39;3 1 2024&#39; asDate.
+o4 produkty add: prod1.
+
+o5 := Objednavka new.
+o5 cislo: 652; dopravce: dop3; denObjednani: &#39;1 12 2024&#39; asDate.
+o5 produkty add: prod1; add: prod4.
+
+o6 := Objednavka new.
+o6 cislo: 222; dopravce: dop2; denObjednani: &#39;4 19 2024&#39; asDate.
+o6 produkty add: prod2; add: prod4.
+
+o7 := Objednavka new.
+o7 cislo: 123; dopravce: dop3; denObjednani: &#39;1 25 2024&#39; asDate.
+o7 produkty add: prod1; add: prod3.
+
+o8 := Objednavka new.
+o8 cislo: 214; dopravce: dop3; denObjednani: &#39;1 12 2024&#39; asDate.
+o8 produkty add: prod1.
+
+ObjednavkySet := Set new.
+ObjednavkySet add: o1; add: o2; add: o3; add: o4; add: o5; add: o6; add: o7; add: o8.
+
+&quot;---- ZAKAZNICI ----&quot;
+zak1 := Zakaznik new.
+zak1 jmeno: &#39;Karel&#39;; prijmeni: &#39;Pepik&#39;; adresa: &#39;Pepikov 12 42069&#39;.
+zak1 objednavky add: o1; add: o2; add: o5; add: o8.
+
+zak2 := Zakaznik new.
+zak2 jmeno: &#39;Josef&#39;; prijmeni: &#39;Pepik&#39;; adresa: &#39;Pepikov 12 42069&#39;.
+zak2 objednavky add: o3.
+
+zak3 := Zakaznik new.
+zak3 jmeno: &#39;Jan&#39;; prijmeni: &#39;Novak&#39;; adresa: &#39;Pepikov 13 42069&#39;.
+zak3 objednavky add: o4; add: o7.
+
+zak4 := Zakaznik new.
+zak4 jmeno: &#39;Arnost&#39;; prijmeni: &#39;Vesely&#39;; adresa: &#39;Ritka 42 25203&#39;.
+zak4 objednavky add: o6.
+
+ZakazniciSet := Set new.
+ZakazniciSet add: zak1; add: zak2; add: zak3; add: zak4.
+
+</sixx.object>
+		<sixx.object sixx.id="139" sixx.name="messagesWithParMode" sixx.type="Symbol" >sendOnly</sixx.object>
+		<sixx.object sixx.id="140" sixx.name="messagesWithoutParMode" sixx.type="Symbol" >sendAndBrowse</sixx.object>
+		<sixx.object sixx.id="141" sixx.name="diagramSymbols" sixx.type="Set" >
+			<sixx.object sixx.id="142" sixx.type="DaskalosCollectionSymbol" >
+				<sixx.object sixx.idref="7" sixx.name="subject" ></sixx.object>
+				<sixx.object sixx.id="143" sixx.name="position" sixx.type="Rectangle" >
+					<sixx.object sixx.id="144" sixx.name="origin" sixx.type="Point" >260@210</sixx.object>
+					<sixx.object sixx.id="145" sixx.name="corner" sixx.type="Point" >360@293</sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="146" sixx.name="name" sixx.type="String" >ZakazniciSet</sixx.object>
+				<sixx.object sixx.id="147" sixx.name="borderPoints" sixx.type="List" >
+					<sixx.object sixx.id="148" sixx.type="Point" >260@226</sixx.object>
+					<sixx.object sixx.id="149" sixx.type="Point" >310@210</sixx.object>
+					<sixx.object sixx.id="150" sixx.type="Point" >360@226</sixx.object>
+					<sixx.object sixx.id="151" sixx.type="Point" >360@277</sixx.object>
+					<sixx.object sixx.id="152" sixx.type="Point" >310@293</sixx.object>
+					<sixx.object sixx.id="153" sixx.type="Point" >260@277</sixx.object>
+					<sixx.object sixx.idref="148" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="154" sixx.name="innerRectangle" sixx.type="Rectangle" >
+					<sixx.object sixx.id="155" sixx.name="origin" sixx.type="Point" >261@227</sixx.object>
+					<sixx.object sixx.id="156" sixx.name="corner" sixx.type="Point" >359@276</sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="157" sixx.type="DaskalosClassSymbol" >
+				<sixx.object sixx.id="158" sixx.name="subject" sixx.type="Symbol" >Zamestnanec</sixx.object>
+				<sixx.object sixx.id="159" sixx.name="position" sixx.type="Rectangle" >
+					<sixx.object sixx.id="160" sixx.name="origin" sixx.type="Point" >660@160</sixx.object>
+					<sixx.object sixx.id="161" sixx.name="corner" sixx.type="Point" >760@340</sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="162" sixx.name="methodsText" sixx.type="ComposedText" >
+					<sixx.object sixx.id="163" sixx.name="textStyle" sixx.type="UndefinedObject" >nil</sixx.object>
+					<sixx.object sixx.id="164" sixx.name="text" sixx.type="Text" >
+						<sixx.object sixx.id="165" sixx.name="string" sixx.type="String" >prava
+</sixx.object>
+						<sixx.object sixx.id="166" sixx.name="runs" sixx.type="RunArray" >
+							<sixx.object sixx.id="167" sixx.name="runs" sixx.type="Array" >
+								<sixx.object sixx.id="168" sixx.type="SmallInteger" >6</sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="169" sixx.name="values" sixx.type="Array" >
+								<sixx.object sixx.idref="163" ></sixx.object>
+							</sixx.object>
+						</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.idref="94" sixx.name="compositionWidth" ></sixx.object>
+					<sixx.object sixx.id="170" sixx.name="compositionHeight" sixx.type="SmallInteger" >38</sixx.object>
+					<sixx.object sixx.id="171" sixx.name="wordWrap" sixx.type="True" >true</sixx.object>
+					<sixx.object sixx.idref="163" sixx.name="fontPolicy" ></sixx.object>
+					<sixx.object sixx.id="172" sixx.name="lineTable" sixx.type="OptimizedLineInformationTable" >
+						<sixx.object sixx.id="173" sixx.name="lines" sixx.type="Array" >
+							<sixx.object sixx.id="174" sixx.type="SmallInteger" >1</sixx.object>
+							<sixx.object sixx.id="175" sixx.type="SmallInteger" >7</sixx.object>
+							<sixx.object sixx.idref="163" ></sixx.object>
+						</sixx.object>
+						<sixx.object sixx.idref="174" sixx.name="lastLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustmentStartLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustment" ></sixx.object>
+					</sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="fitWidth" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="176" sixx.name="instVarsText" sixx.type="ComposedText" >
+					<sixx.object sixx.idref="163" sixx.name="textStyle" ></sixx.object>
+					<sixx.object sixx.id="177" sixx.name="text" sixx.type="Text" >
+						<sixx.object sixx.id="178" sixx.name="string" sixx.type="String" >pozice </sixx.object>
+						<sixx.object sixx.id="179" sixx.name="runs" sixx.type="RunArray" >
+							<sixx.object sixx.id="180" sixx.name="runs" sixx.type="Array" >
+								<sixx.object sixx.idref="175" ></sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="181" sixx.name="values" sixx.type="Array" >
+								<sixx.object sixx.idref="163" ></sixx.object>
+							</sixx.object>
+						</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="182" sixx.name="compositionWidth" sixx.type="SmallInteger" >42</sixx.object>
+					<sixx.object sixx.id="183" sixx.name="compositionHeight" sixx.type="SmallInteger" >19</sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="wordWrap" ></sixx.object>
+					<sixx.object sixx.idref="163" sixx.name="fontPolicy" ></sixx.object>
+					<sixx.object sixx.id="184" sixx.name="lineTable" sixx.type="OptimizedLineInformationTable" >
+						<sixx.object sixx.id="185" sixx.name="lines" sixx.type="Array" >
+							<sixx.object sixx.idref="174" ></sixx.object>
+							<sixx.object sixx.id="186" sixx.type="SmallInteger" >8</sixx.object>
+							<sixx.object sixx.idref="163" ></sixx.object>
+						</sixx.object>
+						<sixx.object sixx.idref="174" sixx.name="lastLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustmentStartLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustment" ></sixx.object>
+					</sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="fitWidth" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="187" sixx.name="compositionConnections" sixx.type="Set" >
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="188" sixx.type="DaskalosCollectionSymbol" >
+				<sixx.object sixx.idref="105" sixx.name="subject" ></sixx.object>
+				<sixx.object sixx.id="189" sixx.name="position" sixx.type="Rectangle" >
+					<sixx.object sixx.id="190" sixx.name="origin" sixx.type="Point" >490@700</sixx.object>
+					<sixx.object sixx.id="191" sixx.name="corner" sixx.type="Point" >590@783</sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="192" sixx.name="name" sixx.type="String" >ObjednavkySet</sixx.object>
+				<sixx.object sixx.id="193" sixx.name="borderPoints" sixx.type="List" >
+					<sixx.object sixx.id="194" sixx.type="Point" >490@716</sixx.object>
+					<sixx.object sixx.id="195" sixx.type="Point" >540@700</sixx.object>
+					<sixx.object sixx.id="196" sixx.type="Point" >590@716</sixx.object>
+					<sixx.object sixx.id="197" sixx.type="Point" >590@767</sixx.object>
+					<sixx.object sixx.id="198" sixx.type="Point" >540@783</sixx.object>
+					<sixx.object sixx.id="199" sixx.type="Point" >490@767</sixx.object>
+					<sixx.object sixx.idref="194" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="200" sixx.name="innerRectangle" sixx.type="Rectangle" >
+					<sixx.object sixx.id="201" sixx.name="origin" sixx.type="Point" >491@717</sixx.object>
+					<sixx.object sixx.id="202" sixx.name="corner" sixx.type="Point" >589@766</sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="203" sixx.type="DaskalosCollectionSymbol" >
+				<sixx.object sixx.idref="99" sixx.name="subject" ></sixx.object>
+				<sixx.object sixx.id="204" sixx.name="position" sixx.type="Rectangle" >
+					<sixx.object sixx.id="205" sixx.name="origin" sixx.type="Point" >110@700</sixx.object>
+					<sixx.object sixx.id="206" sixx.name="corner" sixx.type="Point" >210@783</sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="207" sixx.name="name" sixx.type="String" >DopravciSet</sixx.object>
+				<sixx.object sixx.id="208" sixx.name="borderPoints" sixx.type="List" >
+					<sixx.object sixx.id="209" sixx.type="Point" >110@716</sixx.object>
+					<sixx.object sixx.id="210" sixx.type="Point" >160@700</sixx.object>
+					<sixx.object sixx.id="211" sixx.type="Point" >210@716</sixx.object>
+					<sixx.object sixx.id="212" sixx.type="Point" >210@767</sixx.object>
+					<sixx.object sixx.id="213" sixx.type="Point" >160@783</sixx.object>
+					<sixx.object sixx.id="214" sixx.type="Point" >110@767</sixx.object>
+					<sixx.object sixx.idref="209" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="215" sixx.name="innerRectangle" sixx.type="Rectangle" >
+					<sixx.object sixx.id="216" sixx.name="origin" sixx.type="Point" >111@717</sixx.object>
+					<sixx.object sixx.id="217" sixx.name="corner" sixx.type="Point" >209@766</sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="218" sixx.type="DaskalosCollectionSymbol" >
+				<sixx.object sixx.idref="102" sixx.name="subject" ></sixx.object>
+				<sixx.object sixx.id="219" sixx.name="position" sixx.type="Rectangle" >
+					<sixx.object sixx.id="220" sixx.name="origin" sixx.type="Point" >830@700</sixx.object>
+					<sixx.object sixx.id="221" sixx.name="corner" sixx.type="Point" >930@783</sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="222" sixx.name="name" sixx.type="String" >ProduktSet</sixx.object>
+				<sixx.object sixx.id="223" sixx.name="borderPoints" sixx.type="List" >
+					<sixx.object sixx.id="224" sixx.type="Point" >830@716</sixx.object>
+					<sixx.object sixx.id="225" sixx.type="Point" >880@700</sixx.object>
+					<sixx.object sixx.id="226" sixx.type="Point" >930@716</sixx.object>
+					<sixx.object sixx.id="227" sixx.type="Point" >930@767</sixx.object>
+					<sixx.object sixx.id="228" sixx.type="Point" >880@783</sixx.object>
+					<sixx.object sixx.id="229" sixx.type="Point" >830@767</sixx.object>
+					<sixx.object sixx.idref="224" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="230" sixx.name="innerRectangle" sixx.type="Rectangle" >
+					<sixx.object sixx.id="231" sixx.name="origin" sixx.type="Point" >831@717</sixx.object>
+					<sixx.object sixx.id="232" sixx.name="corner" sixx.type="Point" >929@766</sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="233" sixx.type="DaskalosClassSymbol" >
+				<sixx.object sixx.id="234" sixx.name="subject" sixx.type="Symbol" >Osoba</sixx.object>
+				<sixx.object sixx.id="235" sixx.name="position" sixx.type="Rectangle" >
+					<sixx.object sixx.id="236" sixx.name="origin" sixx.type="Point" >510@30</sixx.object>
+					<sixx.object sixx.id="237" sixx.name="corner" sixx.type="Point" >750@120</sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="238" sixx.name="methodsText" sixx.type="ComposedText" >
+					<sixx.object sixx.idref="163" sixx.name="textStyle" ></sixx.object>
+					<sixx.object sixx.id="239" sixx.name="text" sixx.type="Text" >
+						<sixx.object sixx.id="240" sixx.name="string" sixx.type="String" ></sixx.object>
+						<sixx.object sixx.id="241" sixx.name="runs" sixx.type="RunArray" >
+							<sixx.object sixx.id="242" sixx.name="runs" sixx.type="Array" >
+							</sixx.object>
+							<sixx.object sixx.id="243" sixx.name="values" sixx.type="Array" >
+							</sixx.object>
+						</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="244" sixx.name="compositionWidth" sixx.type="SmallInteger" >0</sixx.object>
+					<sixx.object sixx.idref="244" sixx.name="compositionHeight" ></sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="wordWrap" ></sixx.object>
+					<sixx.object sixx.idref="163" sixx.name="fontPolicy" ></sixx.object>
+					<sixx.object sixx.id="245" sixx.name="lineTable" sixx.type="OptimizedLineInformationTable" >
+						<sixx.object sixx.id="246" sixx.name="lines" sixx.type="Array" >
+							<sixx.object sixx.idref="174" ></sixx.object>
+							<sixx.object sixx.idref="163" ></sixx.object>
+							<sixx.object sixx.idref="163" ></sixx.object>
+							<sixx.object sixx.idref="163" ></sixx.object>
+							<sixx.object sixx.idref="163" ></sixx.object>
+						</sixx.object>
+						<sixx.object sixx.idref="244" sixx.name="lastLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustmentStartLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustment" ></sixx.object>
+					</sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="fitWidth" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="247" sixx.name="instVarsText" sixx.type="ComposedText" >
+					<sixx.object sixx.idref="163" sixx.name="textStyle" ></sixx.object>
+					<sixx.object sixx.id="248" sixx.name="text" sixx.type="Text" >
+						<sixx.object sixx.id="249" sixx.name="string" sixx.type="String" >jmeno
+prijmeni </sixx.object>
+						<sixx.object sixx.id="250" sixx.name="runs" sixx.type="RunArray" >
+							<sixx.object sixx.id="251" sixx.name="runs" sixx.type="Array" >
+								<sixx.object sixx.id="252" sixx.type="SmallInteger" >15</sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="253" sixx.name="values" sixx.type="Array" >
+								<sixx.object sixx.idref="163" ></sixx.object>
+							</sixx.object>
+						</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="254" sixx.name="compositionWidth" sixx.type="SmallInteger" >49</sixx.object>
+					<sixx.object sixx.idref="170" sixx.name="compositionHeight" ></sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="wordWrap" ></sixx.object>
+					<sixx.object sixx.idref="163" sixx.name="fontPolicy" ></sixx.object>
+					<sixx.object sixx.id="255" sixx.name="lineTable" sixx.type="OptimizedLineInformationTable" >
+						<sixx.object sixx.id="256" sixx.name="lines" sixx.type="Array" >
+							<sixx.object sixx.idref="174" ></sixx.object>
+							<sixx.object sixx.idref="175" ></sixx.object>
+							<sixx.object sixx.id="257" sixx.type="SmallInteger" >16</sixx.object>
+							<sixx.object sixx.idref="163" ></sixx.object>
+							<sixx.object sixx.idref="163" ></sixx.object>
+						</sixx.object>
+						<sixx.object sixx.id="258" sixx.name="lastLine" sixx.type="SmallInteger" >2</sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustmentStartLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustment" ></sixx.object>
+					</sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="fitWidth" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="259" sixx.name="compositionConnections" sixx.type="Set" >
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="260" sixx.type="DaskalosClassSymbol" >
+				<sixx.object sixx.id="261" sixx.name="subject" sixx.type="Symbol" >Objednavka</sixx.object>
+				<sixx.object sixx.id="262" sixx.name="position" sixx.type="Rectangle" >
+					<sixx.object sixx.id="263" sixx.name="origin" sixx.type="Point" >470@480</sixx.object>
+					<sixx.object sixx.id="264" sixx.name="corner" sixx.type="Point" >610@640</sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="265" sixx.name="methodsText" sixx.type="ComposedText" >
+					<sixx.object sixx.idref="163" sixx.name="textStyle" ></sixx.object>
+					<sixx.object sixx.id="266" sixx.name="text" sixx.type="Text" >
+						<sixx.object sixx.id="267" sixx.name="string" sixx.type="String" >celkovaCena
+denDoruceni
+</sixx.object>
+						<sixx.object sixx.id="268" sixx.name="runs" sixx.type="RunArray" >
+							<sixx.object sixx.id="269" sixx.name="runs" sixx.type="Array" >
+								<sixx.object sixx.id="270" sixx.type="SmallInteger" >24</sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="271" sixx.name="values" sixx.type="Array" >
+								<sixx.object sixx.idref="163" ></sixx.object>
+							</sixx.object>
+						</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="272" sixx.name="compositionWidth" sixx.type="SmallInteger" >73</sixx.object>
+					<sixx.object sixx.id="273" sixx.name="compositionHeight" sixx.type="SmallInteger" >57</sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="wordWrap" ></sixx.object>
+					<sixx.object sixx.idref="163" sixx.name="fontPolicy" ></sixx.object>
+					<sixx.object sixx.id="274" sixx.name="lineTable" sixx.type="OptimizedLineInformationTable" >
+						<sixx.object sixx.id="275" sixx.name="lines" sixx.type="Array" >
+							<sixx.object sixx.idref="174" ></sixx.object>
+							<sixx.object sixx.id="276" sixx.type="SmallInteger" >13</sixx.object>
+							<sixx.object sixx.id="277" sixx.type="SmallInteger" >25</sixx.object>
+						</sixx.object>
+						<sixx.object sixx.idref="258" sixx.name="lastLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustmentStartLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustment" ></sixx.object>
+					</sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="fitWidth" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="278" sixx.name="instVarsText" sixx.type="ComposedText" >
+					<sixx.object sixx.idref="163" sixx.name="textStyle" ></sixx.object>
+					<sixx.object sixx.id="279" sixx.name="text" sixx.type="Text" >
+						<sixx.object sixx.id="280" sixx.name="string" sixx.type="String" >cislo
+denObjednani </sixx.object>
+						<sixx.object sixx.id="281" sixx.name="runs" sixx.type="RunArray" >
+							<sixx.object sixx.id="282" sixx.name="runs" sixx.type="Array" >
+								<sixx.object sixx.idref="183" ></sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="283" sixx.name="values" sixx.type="Array" >
+								<sixx.object sixx.idref="163" ></sixx.object>
+							</sixx.object>
+						</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="284" sixx.name="compositionWidth" sixx.type="SmallInteger" >83</sixx.object>
+					<sixx.object sixx.idref="170" sixx.name="compositionHeight" ></sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="wordWrap" ></sixx.object>
+					<sixx.object sixx.idref="163" sixx.name="fontPolicy" ></sixx.object>
+					<sixx.object sixx.id="285" sixx.name="lineTable" sixx.type="OptimizedLineInformationTable" >
+						<sixx.object sixx.id="286" sixx.name="lines" sixx.type="Array" >
+							<sixx.object sixx.idref="174" ></sixx.object>
+							<sixx.object sixx.idref="175" ></sixx.object>
+							<sixx.object sixx.id="287" sixx.type="SmallInteger" >20</sixx.object>
+							<sixx.object sixx.idref="163" ></sixx.object>
+							<sixx.object sixx.idref="163" ></sixx.object>
+						</sixx.object>
+						<sixx.object sixx.idref="258" sixx.name="lastLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustmentStartLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustment" ></sixx.object>
+					</sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="fitWidth" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="288" sixx.name="compositionConnections" sixx.type="Set" >
+					<sixx.object sixx.id="289" sixx.type="DaskalosCompositionConnection" >
+						<sixx.object sixx.idref="260" sixx.name="fromSymbol" ></sixx.object>
+						<sixx.object sixx.id="290" sixx.name="toSymbol" sixx.type="DaskalosClassSymbol" >
+							<sixx.object sixx.id="291" sixx.name="subject" sixx.type="Symbol" >Dopravce</sixx.object>
+							<sixx.object sixx.id="292" sixx.name="position" sixx.type="Rectangle" >
+								<sixx.object sixx.id="293" sixx.name="origin" sixx.type="Point" >100@510</sixx.object>
+								<sixx.object sixx.id="294" sixx.name="corner" sixx.type="Point" >220@670</sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="295" sixx.name="methodsText" sixx.type="ComposedText" >
+								<sixx.object sixx.idref="163" sixx.name="textStyle" ></sixx.object>
+								<sixx.object sixx.id="296" sixx.name="text" sixx.type="Text" >
+									<sixx.object sixx.idref="240" sixx.name="string" ></sixx.object>
+									<sixx.object sixx.id="297" sixx.name="runs" sixx.type="RunArray" >
+										<sixx.object sixx.id="298" sixx.name="runs" sixx.type="Array" >
+										</sixx.object>
+										<sixx.object sixx.id="299" sixx.name="values" sixx.type="Array" >
+										</sixx.object>
+									</sixx.object>
+								</sixx.object>
+								<sixx.object sixx.idref="244" sixx.name="compositionWidth" ></sixx.object>
+								<sixx.object sixx.idref="244" sixx.name="compositionHeight" ></sixx.object>
+								<sixx.object sixx.idref="171" sixx.name="wordWrap" ></sixx.object>
+								<sixx.object sixx.idref="163" sixx.name="fontPolicy" ></sixx.object>
+								<sixx.object sixx.id="300" sixx.name="lineTable" sixx.type="OptimizedLineInformationTable" >
+									<sixx.object sixx.id="301" sixx.name="lines" sixx.type="Array" >
+										<sixx.object sixx.idref="174" ></sixx.object>
+										<sixx.object sixx.idref="163" ></sixx.object>
+										<sixx.object sixx.idref="163" ></sixx.object>
+										<sixx.object sixx.idref="163" ></sixx.object>
+										<sixx.object sixx.idref="163" ></sixx.object>
+									</sixx.object>
+									<sixx.object sixx.idref="244" sixx.name="lastLine" ></sixx.object>
+									<sixx.object sixx.idref="163" sixx.name="adjustmentStartLine" ></sixx.object>
+									<sixx.object sixx.idref="163" sixx.name="adjustment" ></sixx.object>
+								</sixx.object>
+								<sixx.object sixx.idref="171" sixx.name="fitWidth" ></sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="302" sixx.name="instVarsText" sixx.type="ComposedText" >
+								<sixx.object sixx.idref="163" sixx.name="textStyle" ></sixx.object>
+								<sixx.object sixx.id="303" sixx.name="text" sixx.type="Text" >
+									<sixx.object sixx.id="304" sixx.name="string" sixx.type="String" >nazev
+dobaDoruceni
+cenaDopravy </sixx.object>
+									<sixx.object sixx.id="305" sixx.name="runs" sixx.type="RunArray" >
+										<sixx.object sixx.id="306" sixx.name="runs" sixx.type="Array" >
+											<sixx.object sixx.id="307" sixx.type="SmallInteger" >31</sixx.object>
+										</sixx.object>
+										<sixx.object sixx.id="308" sixx.name="values" sixx.type="Array" >
+											<sixx.object sixx.idref="163" ></sixx.object>
+										</sixx.object>
+									</sixx.object>
+								</sixx.object>
+								<sixx.object sixx.idref="29" sixx.name="compositionWidth" ></sixx.object>
+								<sixx.object sixx.idref="273" sixx.name="compositionHeight" ></sixx.object>
+								<sixx.object sixx.idref="171" sixx.name="wordWrap" ></sixx.object>
+								<sixx.object sixx.idref="163" sixx.name="fontPolicy" ></sixx.object>
+								<sixx.object sixx.id="309" sixx.name="lineTable" sixx.type="OptimizedLineInformationTable" >
+									<sixx.object sixx.id="310" sixx.name="lines" sixx.type="Array" >
+										<sixx.object sixx.idref="174" ></sixx.object>
+										<sixx.object sixx.idref="175" ></sixx.object>
+										<sixx.object sixx.idref="287" ></sixx.object>
+										<sixx.object sixx.id="311" sixx.type="SmallInteger" >32</sixx.object>
+										<sixx.object sixx.idref="163" ></sixx.object>
+										<sixx.object sixx.idref="163" ></sixx.object>
+									</sixx.object>
+									<sixx.object sixx.idref="28" sixx.name="lastLine" ></sixx.object>
+									<sixx.object sixx.idref="163" sixx.name="adjustmentStartLine" ></sixx.object>
+									<sixx.object sixx.idref="163" sixx.name="adjustment" ></sixx.object>
+								</sixx.object>
+								<sixx.object sixx.idref="171" sixx.name="fitWidth" ></sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="312" sixx.name="compositionConnections" sixx.type="Set" >
+							</sixx.object>
+						</sixx.object>
+						<sixx.object sixx.id="313" sixx.name="name" sixx.type="String" >dopravce</sixx.object>
+						<sixx.object sixx.idref="240" sixx.name="cardinality" ></sixx.object>
+						<sixx.object sixx.idref="240" sixx.name="stereotype" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="fromPoint" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="toPoint" ></sixx.object>
+						<sixx.object sixx.id="314" sixx.name="controlPoints" sixx.type="List" >
+							<sixx.object sixx.idref="163" ></sixx.object>
+						</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="315" sixx.type="DaskalosCompositionConnection" >
+						<sixx.object sixx.idref="260" sixx.name="fromSymbol" ></sixx.object>
+						<sixx.object sixx.id="316" sixx.name="toSymbol" sixx.type="DaskalosClassSymbol" >
+							<sixx.object sixx.id="317" sixx.name="subject" sixx.type="Symbol" >Produkt</sixx.object>
+							<sixx.object sixx.id="318" sixx.name="position" sixx.type="Rectangle" >
+								<sixx.object sixx.id="319" sixx.name="origin" sixx.type="Point" >820@510</sixx.object>
+								<sixx.object sixx.id="320" sixx.name="corner" sixx.type="Point" >940@670</sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="321" sixx.name="methodsText" sixx.type="ComposedText" >
+								<sixx.object sixx.idref="163" sixx.name="textStyle" ></sixx.object>
+								<sixx.object sixx.id="322" sixx.name="text" sixx.type="Text" >
+									<sixx.object sixx.idref="240" sixx.name="string" ></sixx.object>
+									<sixx.object sixx.id="323" sixx.name="runs" sixx.type="RunArray" >
+										<sixx.object sixx.id="324" sixx.name="runs" sixx.type="Array" >
+										</sixx.object>
+										<sixx.object sixx.id="325" sixx.name="values" sixx.type="Array" >
+										</sixx.object>
+									</sixx.object>
+								</sixx.object>
+								<sixx.object sixx.idref="244" sixx.name="compositionWidth" ></sixx.object>
+								<sixx.object sixx.idref="244" sixx.name="compositionHeight" ></sixx.object>
+								<sixx.object sixx.idref="171" sixx.name="wordWrap" ></sixx.object>
+								<sixx.object sixx.idref="163" sixx.name="fontPolicy" ></sixx.object>
+								<sixx.object sixx.id="326" sixx.name="lineTable" sixx.type="OptimizedLineInformationTable" >
+									<sixx.object sixx.id="327" sixx.name="lines" sixx.type="Array" >
+										<sixx.object sixx.idref="174" ></sixx.object>
+										<sixx.object sixx.idref="163" ></sixx.object>
+										<sixx.object sixx.idref="163" ></sixx.object>
+										<sixx.object sixx.idref="163" ></sixx.object>
+										<sixx.object sixx.idref="163" ></sixx.object>
+									</sixx.object>
+									<sixx.object sixx.idref="244" sixx.name="lastLine" ></sixx.object>
+									<sixx.object sixx.idref="163" sixx.name="adjustmentStartLine" ></sixx.object>
+									<sixx.object sixx.idref="163" sixx.name="adjustment" ></sixx.object>
+								</sixx.object>
+								<sixx.object sixx.idref="171" sixx.name="fitWidth" ></sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="328" sixx.name="instVarsText" sixx.type="ComposedText" >
+								<sixx.object sixx.idref="163" sixx.name="textStyle" ></sixx.object>
+								<sixx.object sixx.id="329" sixx.name="text" sixx.type="Text" >
+									<sixx.object sixx.id="330" sixx.name="string" sixx.type="String" >cena
+popis
+nazev
+ean </sixx.object>
+									<sixx.object sixx.id="331" sixx.name="runs" sixx.type="RunArray" >
+										<sixx.object sixx.id="332" sixx.name="runs" sixx.type="Array" >
+											<sixx.object sixx.id="333" sixx.type="SmallInteger" >21</sixx.object>
+										</sixx.object>
+										<sixx.object sixx.id="334" sixx.name="values" sixx.type="Array" >
+											<sixx.object sixx.idref="163" ></sixx.object>
+										</sixx.object>
+									</sixx.object>
+								</sixx.object>
+								<sixx.object sixx.id="335" sixx.name="compositionWidth" sixx.type="SmallInteger" >33</sixx.object>
+								<sixx.object sixx.id="336" sixx.name="compositionHeight" sixx.type="SmallInteger" >76</sixx.object>
+								<sixx.object sixx.idref="171" sixx.name="wordWrap" ></sixx.object>
+								<sixx.object sixx.idref="163" sixx.name="fontPolicy" ></sixx.object>
+								<sixx.object sixx.id="337" sixx.name="lineTable" sixx.type="OptimizedLineInformationTable" >
+									<sixx.object sixx.id="338" sixx.name="lines" sixx.type="Array" >
+										<sixx.object sixx.idref="174" ></sixx.object>
+										<sixx.object sixx.idref="168" ></sixx.object>
+										<sixx.object sixx.id="339" sixx.type="SmallInteger" >12</sixx.object>
+										<sixx.object sixx.id="340" sixx.type="SmallInteger" >18</sixx.object>
+										<sixx.object sixx.id="341" sixx.type="SmallInteger" >22</sixx.object>
+										<sixx.object sixx.idref="163" ></sixx.object>
+									</sixx.object>
+									<sixx.object sixx.idref="60" sixx.name="lastLine" ></sixx.object>
+									<sixx.object sixx.idref="163" sixx.name="adjustmentStartLine" ></sixx.object>
+									<sixx.object sixx.idref="163" sixx.name="adjustment" ></sixx.object>
+								</sixx.object>
+								<sixx.object sixx.idref="171" sixx.name="fitWidth" ></sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="342" sixx.name="compositionConnections" sixx.type="Set" >
+							</sixx.object>
+						</sixx.object>
+						<sixx.object sixx.id="343" sixx.name="name" sixx.type="String" >produkty</sixx.object>
+						<sixx.object sixx.id="344" sixx.name="cardinality" sixx.type="String" >&#42;</sixx.object>
+						<sixx.object sixx.id="345" sixx.name="stereotype" sixx.type="String" >{Bag}</sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="fromPoint" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="toPoint" ></sixx.object>
+						<sixx.object sixx.id="346" sixx.name="controlPoints" sixx.type="List" >
+							<sixx.object sixx.idref="163" ></sixx.object>
+						</sixx.object>
+					</sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.idref="316" ></sixx.object>
+			<sixx.object sixx.idref="290" ></sixx.object>
+			<sixx.object sixx.id="347" sixx.type="DaskalosClassSymbol" >
+				<sixx.object sixx.id="348" sixx.name="subject" sixx.type="Symbol" >Zakaznik</sixx.object>
+				<sixx.object sixx.id="349" sixx.name="position" sixx.type="Rectangle" >
+					<sixx.object sixx.id="350" sixx.name="origin" sixx.type="Point" >490@160</sixx.object>
+					<sixx.object sixx.id="351" sixx.name="corner" sixx.type="Point" >590@340</sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="352" sixx.name="methodsText" sixx.type="ComposedText" >
+					<sixx.object sixx.idref="163" sixx.name="textStyle" ></sixx.object>
+					<sixx.object sixx.id="353" sixx.name="text" sixx.type="Text" >
+						<sixx.object sixx.id="354" sixx.name="string" sixx.type="String" >celeJmeno
+</sixx.object>
+						<sixx.object sixx.id="355" sixx.name="runs" sixx.type="RunArray" >
+							<sixx.object sixx.id="356" sixx.name="runs" sixx.type="Array" >
+								<sixx.object sixx.id="357" sixx.type="SmallInteger" >10</sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="358" sixx.name="values" sixx.type="Array" >
+								<sixx.object sixx.idref="163" ></sixx.object>
+							</sixx.object>
+						</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="359" sixx.name="compositionWidth" sixx.type="SmallInteger" >62</sixx.object>
+					<sixx.object sixx.idref="170" sixx.name="compositionHeight" ></sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="wordWrap" ></sixx.object>
+					<sixx.object sixx.idref="163" sixx.name="fontPolicy" ></sixx.object>
+					<sixx.object sixx.id="360" sixx.name="lineTable" sixx.type="OptimizedLineInformationTable" >
+						<sixx.object sixx.id="361" sixx.name="lines" sixx.type="Array" >
+							<sixx.object sixx.idref="174" ></sixx.object>
+							<sixx.object sixx.id="362" sixx.type="SmallInteger" >11</sixx.object>
+							<sixx.object sixx.idref="163" ></sixx.object>
+						</sixx.object>
+						<sixx.object sixx.idref="174" sixx.name="lastLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustmentStartLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustment" ></sixx.object>
+					</sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="fitWidth" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="363" sixx.name="instVarsText" sixx.type="ComposedText" >
+					<sixx.object sixx.idref="163" sixx.name="textStyle" ></sixx.object>
+					<sixx.object sixx.id="364" sixx.name="text" sixx.type="Text" >
+						<sixx.object sixx.id="365" sixx.name="string" sixx.type="String" >adresa </sixx.object>
+						<sixx.object sixx.id="366" sixx.name="runs" sixx.type="RunArray" >
+							<sixx.object sixx.id="367" sixx.name="runs" sixx.type="Array" >
+								<sixx.object sixx.idref="175" ></sixx.object>
+							</sixx.object>
+							<sixx.object sixx.id="368" sixx.name="values" sixx.type="Array" >
+								<sixx.object sixx.idref="163" ></sixx.object>
+							</sixx.object>
+						</sixx.object>
+					</sixx.object>
+					<sixx.object sixx.id="369" sixx.name="compositionWidth" sixx.type="SmallInteger" >43</sixx.object>
+					<sixx.object sixx.idref="183" sixx.name="compositionHeight" ></sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="wordWrap" ></sixx.object>
+					<sixx.object sixx.idref="163" sixx.name="fontPolicy" ></sixx.object>
+					<sixx.object sixx.id="370" sixx.name="lineTable" sixx.type="OptimizedLineInformationTable" >
+						<sixx.object sixx.id="371" sixx.name="lines" sixx.type="Array" >
+							<sixx.object sixx.idref="174" ></sixx.object>
+							<sixx.object sixx.idref="186" ></sixx.object>
+							<sixx.object sixx.idref="163" ></sixx.object>
+						</sixx.object>
+						<sixx.object sixx.idref="174" sixx.name="lastLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustmentStartLine" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="adjustment" ></sixx.object>
+					</sixx.object>
+					<sixx.object sixx.idref="171" sixx.name="fitWidth" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="372" sixx.name="compositionConnections" sixx.type="Set" >
+					<sixx.object sixx.id="373" sixx.type="DaskalosCompositionConnection" >
+						<sixx.object sixx.idref="347" sixx.name="fromSymbol" ></sixx.object>
+						<sixx.object sixx.idref="260" sixx.name="toSymbol" ></sixx.object>
+						<sixx.object sixx.id="374" sixx.name="name" sixx.type="String" >objednavky</sixx.object>
+						<sixx.object sixx.idref="344" sixx.name="cardinality" ></sixx.object>
+						<sixx.object sixx.id="375" sixx.name="stereotype" sixx.type="String" >{Set}</sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="fromPoint" ></sixx.object>
+						<sixx.object sixx.idref="163" sixx.name="toPoint" ></sixx.object>
+						<sixx.object sixx.id="376" sixx.name="controlPoints" sixx.type="List" >
+							<sixx.object sixx.idref="163" ></sixx.object>
+						</sixx.object>
+					</sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="377" sixx.type="DaskalosCollectionSymbol" >
+				<sixx.object sixx.idref="108" sixx.name="subject" ></sixx.object>
+				<sixx.object sixx.id="378" sixx.name="position" sixx.type="Rectangle" >
+					<sixx.object sixx.id="379" sixx.name="origin" sixx.type="Point" >910@210</sixx.object>
+					<sixx.object sixx.id="380" sixx.name="corner" sixx.type="Point" >1010@293</sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="381" sixx.name="name" sixx.type="String" >ZamestnanciSet</sixx.object>
+				<sixx.object sixx.id="382" sixx.name="borderPoints" sixx.type="List" >
+					<sixx.object sixx.id="383" sixx.type="Point" >910@226</sixx.object>
+					<sixx.object sixx.id="384" sixx.type="Point" >960@210</sixx.object>
+					<sixx.object sixx.id="385" sixx.type="Point" >1010@226</sixx.object>
+					<sixx.object sixx.id="386" sixx.type="Point" >1010@277</sixx.object>
+					<sixx.object sixx.id="387" sixx.type="Point" >960@293</sixx.object>
+					<sixx.object sixx.id="388" sixx.type="Point" >910@277</sixx.object>
+					<sixx.object sixx.idref="383" ></sixx.object>
+				</sixx.object>
+				<sixx.object sixx.id="389" sixx.name="innerRectangle" sixx.type="Rectangle" >
+					<sixx.object sixx.id="390" sixx.name="origin" sixx.type="Point" >911@227</sixx.object>
+					<sixx.object sixx.id="391" sixx.name="corner" sixx.type="Point" >1009@276</sixx.object>
+				</sixx.object>
+			</sixx.object>
+		</sixx.object>
+		<sixx.object sixx.id="392" sixx.name="diagramConnections" sixx.type="Set" >
+			<sixx.object sixx.id="393" sixx.type="DaskalosElementConnection" >
+				<sixx.object sixx.idref="157" sixx.name="fromSymbol" ></sixx.object>
+				<sixx.object sixx.idref="377" sixx.name="toSymbol" ></sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="394" sixx.type="DaskalosCompositionConnection" >
+				<sixx.object sixx.idref="260" sixx.name="fromSymbol" ></sixx.object>
+				<sixx.object sixx.idref="316" sixx.name="toSymbol" ></sixx.object>
+				<sixx.object sixx.id="395" sixx.name="name" sixx.type="String" >produkty</sixx.object>
+				<sixx.object sixx.idref="344" sixx.name="cardinality" ></sixx.object>
+				<sixx.object sixx.idref="345" sixx.name="stereotype" ></sixx.object>
+				<sixx.object sixx.id="396" sixx.name="fromPoint" sixx.type="Point" >610@(9625/17)</sixx.object>
+				<sixx.object sixx.id="397" sixx.name="toPoint" sixx.type="Point" >820@(9940/17)</sixx.object>
+				<sixx.object sixx.id="398" sixx.name="controlPoints" sixx.type="List" >
+					<sixx.object sixx.id="399" sixx.type="Point" >715@(19565/34)</sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="400" sixx.type="DaskalosInheritanceConnection" >
+				<sixx.object sixx.idref="157" sixx.name="fromSymbol" ></sixx.object>
+				<sixx.object sixx.idref="233" sixx.name="toSymbol" ></sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="401" sixx.type="DaskalosInheritanceConnection" >
+				<sixx.object sixx.idref="347" sixx.name="fromSymbol" ></sixx.object>
+				<sixx.object sixx.idref="233" sixx.name="toSymbol" ></sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="402" sixx.type="DaskalosElementConnection" >
+				<sixx.object sixx.idref="260" sixx.name="fromSymbol" ></sixx.object>
+				<sixx.object sixx.idref="188" sixx.name="toSymbol" ></sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="403" sixx.type="DaskalosElementConnection" >
+				<sixx.object sixx.idref="316" sixx.name="fromSymbol" ></sixx.object>
+				<sixx.object sixx.idref="218" sixx.name="toSymbol" ></sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="404" sixx.type="DaskalosCompositionConnection" >
+				<sixx.object sixx.idref="260" sixx.name="fromSymbol" ></sixx.object>
+				<sixx.object sixx.idref="290" sixx.name="toSymbol" ></sixx.object>
+				<sixx.object sixx.id="405" sixx.name="name" sixx.type="String" >dopravce</sixx.object>
+				<sixx.object sixx.idref="240" sixx.name="cardinality" ></sixx.object>
+				<sixx.object sixx.idref="240" sixx.name="stereotype" ></sixx.object>
+				<sixx.object sixx.id="406" sixx.name="fromPoint" sixx.type="Point" >470@(10745/19)</sixx.object>
+				<sixx.object sixx.id="407" sixx.name="toPoint" sixx.type="Point" >220@(11120/19)</sixx.object>
+				<sixx.object sixx.id="408" sixx.name="controlPoints" sixx.type="List" >
+					<sixx.object sixx.id="409" sixx.type="Point" >345@(21865/38)</sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="410" sixx.type="DaskalosCompositionConnection" >
+				<sixx.object sixx.idref="347" sixx.name="fromSymbol" ></sixx.object>
+				<sixx.object sixx.idref="260" sixx.name="toSymbol" ></sixx.object>
+				<sixx.object sixx.id="411" sixx.name="name" sixx.type="String" >objednavky</sixx.object>
+				<sixx.object sixx.idref="344" sixx.name="cardinality" ></sixx.object>
+				<sixx.object sixx.idref="375" sixx.name="stereotype" ></sixx.object>
+				<sixx.object sixx.id="412" sixx.name="fromPoint" sixx.type="Point" >540@340</sixx.object>
+				<sixx.object sixx.id="413" sixx.name="toPoint" sixx.type="Point" >540@480</sixx.object>
+				<sixx.object sixx.id="414" sixx.name="controlPoints" sixx.type="List" >
+					<sixx.object sixx.id="415" sixx.type="Point" >540@410</sixx.object>
+				</sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="416" sixx.type="DaskalosElementConnection" >
+				<sixx.object sixx.idref="290" sixx.name="fromSymbol" ></sixx.object>
+				<sixx.object sixx.idref="203" sixx.name="toSymbol" ></sixx.object>
+			</sixx.object>
+			<sixx.object sixx.id="417" sixx.type="DaskalosElementConnection" >
+				<sixx.object sixx.idref="347" sixx.name="fromSymbol" ></sixx.object>
+				<sixx.object sixx.idref="142" sixx.name="toSymbol" ></sixx.object>
+			</sixx.object>
+		</sixx.object>
+	</sixx.object>
+</sixx>

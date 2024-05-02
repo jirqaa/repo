@@ -1,0 +1,738 @@
+<HTML>
+<STYLE TYPE="TEXT/CSS">
+TABLE.UML {
+	BORDER-WIDTH: 1PX 1PX 1PX 1PX;
+	BORDER-SPACING: 0PX;
+	BORDER-STYLE: SOLID SOLID SOLID SOLID;
+	BORDER-COLOR: BLACK BLACK BLACK BLACK;
+	BORDER-COLLAPSE: SEPARATE;
+	BACKGROUND-COLOR: WHITE;
+}
+
+CODE {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 80%;
+}
+
+PRE {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 80%;
+}
+
+H1 {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 144%;
+	FONT-STYLE: BOLD;
+}
+
+H2 {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 120%;
+	FONT-STYLE: BOLD;
+}
+
+H3 {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 100%;
+	FONT-STYLE: BOLD;
+}
+
+</STYLE>
+<HEAD>
+<TITLE>
+Eshop</TITLE>
+</HEAD>
+<BODY>
+<H1>Eshop</H1>
+<B>author&#40;s&#41;: </B>Jiri Koci
+<BR>
+<P>
+Tento projekt ma predstavovat zaklad eshopu. V tomto eshopu si zakaznik muze objednat ruzne produkty. Tyto produkty je pote mozne videt v instanci objednavky a je mozne si vybrat ruzne dopravce pro doruceni teto objednavky. Jednotlivi dopravci maji ruznou dobu doruceni a cenu. V objednavce se pote vypocita celkova cena vsech produktu a ceny dopravy a take den doruceni&#44; kdy by zakaznik mel objednavku ocekavat. V eshopu pracuji zamestnanci. Zamestnanec muze byt zaroven i zakaznik eshopu&#44; jelikoz se zakaznici a zamestnanci ukladaji v oddelenych kolekcich. Zamestnanci maji ruzna opravneni podle jejich pozice v tomto eshopu. Podle techto opravneni maji pristup k ruznym datum a majetku firmy. 
+</P>
+
+<BR>
+<HR>
+<H2>Workspace</H2>
+<PRE>&quot; ========= DOTAZY  ========= &quot;
+&quot;Kdo si objednal objednavku cislo 214&quot;
+	ZakazniciSet select: [:zak | zak objednavky anySatisfy: [:o | o cislo = 214]]
+
+&quot;Objednavky ve kterych bylo objednano triko&quot;
+	ObjednavkySet select: [:o | o produkty anySatisfy: [:prod | prod nazev = &#39;Triko&#39;]]
+
+&quot;Zakaznici kteri meli objednavku s cenou vyssi nez 500&quot;
+	ZakazniciSet select: [:zak | zak objednavky anySatisfy: [:o | o celkovaCena &gt; 500]]
+
+&quot; ========= PRAVIDLA ========= &quot;
+&quot;Vsechny produkty maji EAN&quot;
+&#40;ProduktSet select: [:prod | prod ean = &#39;&#39;]&#41; isEmpty
+
+&quot;Vsichni zamestnanci maji pozici&quot;
+&#40;ZamestnanciSet select: [:zam | zam pozice = &#39;&#39;]&#41; isEmpty
+
+&quot;Kazda objednavka ma alespon 1 produkt&quot;
+&#40;ObjednavkySet select: [:o | o produkty size = 0]&#41; isEmpty</PRE>
+<H4>Workspace Objects</H4>
+<UL>
+
+<BR>
+<LI>
+<CODE>
+DopravciSet :Set
+</CODE>
+<LI>
+<CODE>
+ObjednavkySet :Set
+</CODE>
+<LI>
+<CODE>
+ProduktSet :Set
+</CODE>
+<LI>
+<CODE>
+ZakazniciSet :Set
+</CODE>
+<LI>
+<CODE>
+ZamestnanciSet :Set
+</CODE>
+</UL>
+
+<BR>
+<HR>
+<H2>Script</H2>
+<PRE>&quot;---- ZAMESTNANCI ----&quot;
+zam1 := Zamestnanec new.
+zam1 jmeno: &#39;Radek&#39;; prijmeni: &#39;Geier&#39;; pozice: &#39;CEO&#39;.
+
+zam2 := Zamestnanec new.
+zam2 jmeno: &#39;Zdenek&#39;; prijmeni: &#39;Skopik&#39;; pozice: &#39;IT&#39;.
+
+zam3 := Zamestnanec new.
+zam3 jmeno: &#39;Milan&#39;; prijmeni: &#39;Kugler&#39;; pozice: &#39;Web Specialist&#39;.
+
+zam4 := Zamestnanec new.
+zam4 jmeno: &#39;Ludmila&#39;; prijmeni: &#39;Sura&#39;; pozice: &#39;Manazerka&#39;.
+
+zam5 := Zamestnanec new.
+zam5 jmeno: &#39;Michal&#39;; prijmeni: &#39;Janku&#39;; pozice: &#39;Pracovnik skladu&#39;.
+
+zam6 := Zamestnanec new.
+zam6 jmeno: &#39;Jiri&#39;; prijmeni: &#39;Florian&#39;; pozice: &#39;Pracovnik skladu&#39;.
+
+zam7 := Zamestnanec new.
+zam7 jmeno: &#39;Lucie&#39;; prijmeni: &#39;Carhounova&#39;; pozice: &#39;Personalistka&#39;.
+
+ZamestnanciSet := Set new.
+ZamestnanciSet add: zam1; add: zam2; add: zam3; add: zam4; add: zam5; add: zam6; add: zam7.
+
+&quot;---- PRODUKTY ----&quot;
+prod1 := Produkt new.
+prod1 nazev: &#39;Triko&#39;; popis: &#39;Je to triko.&#39;; cena: 125; ean: 9999999999999.
+
+prod2 := Produkt new.
+prod2 nazev: &#39;Mikina&#39;; popis: &#39;Je to mikina.&#39;; cena: 499; ean: 8888888888888.
+
+prod3 := Produkt new.
+prod3 nazev: &#39;Teplaky&#39;; popis: &#39;Jsou to teplaky.&#39;; cena: 386; ean: 7777777777777.
+
+prod4 := Produkt new.
+prod4 nazev: &#39;Ponozky&#39;; popis: &#39;Jsou to ponozky.&#39;; cena: 29; ean: 6666666666666.
+
+prod5 := Produkt new.
+prod5 nazev: &#39;Rukavice&#39;; popis: &#39;Jsou to rukavice.&#39;; cena: 150; ean: 6969696969420.
+
+ProduktSet := Set new.
+ProduktSet add: prod1; add: prod2; add: prod3; add: prod4; add: prod5.
+
+&quot;---- DOPRAVCI ----&quot;
+dop1 := Dopravce new.
+dop1 nazev: &#39;Zasilkovna&#39;; dobaDoruceni: 3; cenaDopravy: 79.
+
+dop2 := Dopravce new.
+dop2 nazev: &#39;Ceska Posta&#39;; dobaDoruceni: 30; cenaDopravy: 59.
+
+dop3 := Dopravce new.
+dop3 nazev: &#39;PPL&#39;; dobaDoruceni: 4; cenaDopravy: 89.
+
+DopravciSet := Set new.
+DopravciSet add: dop1; add: dop2; add: dop3.
+
+&quot;---- OBJEDNAVKY ----&quot;
+o1 := Objednavka new.
+o1 cislo: 213; dopravce: dop1; denObjednani: &#39;12 12 2023&#39; asDate.
+o1 produkty add: prod1; add: prod3; add: prod4.
+
+o2 := Objednavka new.
+o2 cislo: 124; dopravce: dop3; denObjednani: &#39;4 1 2024&#39; asDate.
+o2 produkty add: prod2; add: prod5.
+
+o3 := Objednavka new.
+o3 cislo: 154; dopravce: dop1; denObjednani: &#39;2 4 2024&#39; asDate.
+o3 produkty add: prod4; add: prod5.
+
+o4 := Objednavka new.
+o4 cislo: 521; dopravce: dop1; denObjednani: &#39;3 1 2024&#39; asDate.
+o4 produkty add: prod1.
+
+o5 := Objednavka new.
+o5 cislo: 652; dopravce: dop3; denObjednani: &#39;1 12 2024&#39; asDate.
+o5 produkty add: prod1; add: prod4.
+
+o6 := Objednavka new.
+o6 cislo: 222; dopravce: dop2; denObjednani: &#39;4 19 2024&#39; asDate.
+o6 produkty add: prod2; add: prod4.
+
+o7 := Objednavka new.
+o7 cislo: 123; dopravce: dop3; denObjednani: &#39;1 25 2024&#39; asDate.
+o7 produkty add: prod1; add: prod3.
+
+o8 := Objednavka new.
+o8 cislo: 214; dopravce: dop3; denObjednani: &#39;1 12 2024&#39; asDate.
+o8 produkty add: prod1.
+
+ObjednavkySet := Set new.
+ObjednavkySet add: o1; add: o2; add: o3; add: o4; add: o5; add: o6; add: o7; add: o8.
+
+&quot;---- ZAKAZNICI ----&quot;
+zak1 := Zakaznik new.
+zak1 jmeno: &#39;Karel&#39;; prijmeni: &#39;Pepik&#39;; adresa: &#39;Pepikov 12 42069&#39;.
+zak1 objednavky add: o1; add: o2; add: o5; add: o8.
+
+zak2 := Zakaznik new.
+zak2 jmeno: &#39;Josef&#39;; prijmeni: &#39;Pepik&#39;; adresa: &#39;Pepikov 12 42069&#39;.
+zak2 objednavky add: o3.
+
+zak3 := Zakaznik new.
+zak3 jmeno: &#39;Jan&#39;; prijmeni: &#39;Novak&#39;; adresa: &#39;Pepikov 13 42069&#39;.
+zak3 objednavky add: o4; add: o7.
+
+zak4 := Zakaznik new.
+zak4 jmeno: &#39;Arnost&#39;; prijmeni: &#39;Vesely&#39;; adresa: &#39;Ritka 42 25203&#39;.
+zak4 objednavky add: o6.
+
+ZakazniciSet := Set new.
+ZakazniciSet add: zak1; add: zak2; add: zak3; add: zak4.
+
+</PRE>
+<HR>
+<H2>Diagram</H2>
+<IMG SRC="aDaskalosProject.gif">
+<HR>
+<H2>Classes</H2>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Osoba
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+jmeno :String
+</CODE>
+<BR>
+<CODE>
+prijmeni :String
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+jmeno
+</CODE>
+<BR>
+<CODE>
+jmeno:
+</CODE>
+<BR>
+<CODE>
+prijmeni
+</CODE>
+<BR>
+<CODE>
+prijmeni:
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+Tato trida je vyuzita aby svym potomkum &quot;Zamestnanec&quot; a &quot;Zakaznik&quot; predala instancni promenne &quot;jmeno&quot; a &quot;prijmeni&quot;.
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     jmeno := nil.
+     prijmeni := nil.</PRE>
+</UL>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Produkt
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+cena :Number
+</CODE>
+<BR>
+<CODE>
+ean :Number
+</CODE>
+<BR>
+<CODE>
+nazev :String
+</CODE>
+<BR>
+<CODE>
+popis :String
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+cena
+</CODE>
+<BR>
+<CODE>
+cena:
+</CODE>
+<BR>
+<CODE>
+ean
+</CODE>
+<BR>
+<CODE>
+ean:
+</CODE>
+<BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+nazev
+</CODE>
+<BR>
+<CODE>
+nazev:
+</CODE>
+<BR>
+<CODE>
+popis
+</CODE>
+<BR>
+<CODE>
+popis:
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+Tato trida obsahuje kompletni info produktu:<BR>
+	- v inst. prom. &quot;cena&quot; se nachazi cena jednotlivych instanci teto tridy &#40;produktu&#41;<BR>
+	- v inst. prom. &quot;popis&quot; je podrobne popsan kazdy produkt<BR>
+	- inst. prom. &quot;nazev&quot; je vyuzita pro pojmenovani kazdeho produktu<BR>
+	- &quot;ean&quot; je inst. prom.&#44; ktera obsahuje hodnotu EANu kazdeho produktu
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     cena := nil.
+     popis := nil.
+     nazev := nil.
+     ean := nil.</PRE>
+</UL>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Dopravce
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+cenaDopravy :Number
+</CODE>
+<BR>
+<CODE>
+dobaDoruceni :Number
+</CODE>
+<BR>
+<CODE>
+nazev :String
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+cenaDopravy
+</CODE>
+<BR>
+<CODE>
+cenaDopravy:
+</CODE>
+<BR>
+<CODE>
+dobaDoruceni
+</CODE>
+<BR>
+<CODE>
+dobaDoruceni:
+</CODE>
+<BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+nazev
+</CODE>
+<BR>
+<CODE>
+nazev:
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+Tato trida obsahuje informace o dopravci:<BR>
+	- inst. prom. &quot;nazev&quot; obsahuje nazvy jednotlivych instanci teto tridy &#40;dopravcu&#41;<BR>
+	- isnt. prom. &quot;dobaDoruceni&quot; urcuje dobu doruceni ve dnech<BR>
+	- inst. prom. &quot;cenaDopravy&quot; urcuje cenu dopravy jednotlivych dopravcu
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     nazev := nil.
+     dobaDoruceni := nil.
+     cenaDopravy := nil.</PRE>
+</UL>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Objednavka
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+cislo :Number
+</CODE>
+<BR>
+<CODE>
+denObjednani :Date
+</CODE>
+<BR>
+<CODE>
+dopravce :Object
+</CODE>
+<BR>
+<CODE>
+produkty :Bag
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+celkovaCena
+</CODE>
+<BR>
+<CODE>
+cislo
+</CODE>
+<BR>
+<CODE>
+cislo:
+</CODE>
+<BR>
+<CODE>
+denDoruceni
+</CODE>
+<BR>
+<CODE>
+denObjednani
+</CODE>
+<BR>
+<CODE>
+denObjednani:
+</CODE>
+<BR>
+<CODE>
+dopravce
+</CODE>
+<BR>
+<CODE>
+dopravce:
+</CODE>
+<BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+produkty
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+Tato trida obsahuje kompletni data objednavky: <BR>
+	- inst. prom . &quot;cislo&quot; je cislo objednavky vyuzitelne pro dohledani jednotlivych instanci teto tridy &#40;objednavek&#41;<BR>
+	- objekt &quot;dopravce&quot; propojuje asociaci objednavku s jednim vybranym dopravcem ktereho si zakaznik zvolil<BR>
+	- bag &quot;produkty&quot; propojuje asociaci objednavku s kolekci produktu&#44; ktere si zakaznik objednal<BR>
+	- inst. prom. &quot;denObjednani&quot; je datum uzavreni objednavky&#44; ktere je vyuzito v metode &quot;denDoruceni&quot; pri 	  kalkulaci dne&#44; kdy ma byt objednavka dorucena<BR>
+	- metoda &quot;celkovaCena&quot; scita celkovou cenu vsech produktu v jednotlivych instancich teto tridy a cene 	  doruceni ktera je zavisla na zvolenem dopravci
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+celkovaCena
+</CODE></B>
+<PRE>
+	| cp sumCP |
+	sumCP := 0.
+	cp := produkty collect: [:prod | prod cena].
+	cp do: [:cena | sumCP := sumCP &#43; cena].
+	^sumCP &#43; dopravce cenaDopravy</PRE>
+<LI>
+<B><CODE>
+denDoruceni
+</CODE></B>
+<PRE>
+	^denObjednani addDays: dopravce dobaDoruceni</PRE>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     cislo := nil.
+     produkty := Bag new.
+     dopravce := nil.
+     denObjednani := nil.</PRE>
+</UL>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Zamestnanec
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+pozice :String
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+pozice
+</CODE>
+<BR>
+<CODE>
+pozice:
+</CODE>
+<BR>
+<CODE>
+prava
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+Tato trida dedi od tridy &quot;Osoba&quot; instancni promenne &quot;jmeno&quot; a &quot;prijmeni&quot; kvuli identifikaci v praci a dale ma instancni promennou &quot;pozice&quot;&#44; ktera zamestnancum pote pomoci metody &quot;prava&quot; prideluje opravneni k ruznym vecem.
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     pozice := nil.</PRE>
+<LI>
+<B><CODE>
+prava
+</CODE></B>
+<PRE>
+	pozice = &#39;Web Specialist&#39; ifTrue: [^&#39;uprava stranek&#39;].
+	pozice = &#39;CEO&#39; ifTrue: [^&#39;vsechna&#39;].
+	pozice = &#39;Personalistka&#39; 
+		ifTrue: [^&#39;pristup k datum zamestnancu a zakazniku &#43; prace se smlouvami&#39;].
+	pozice = &#39;IT&#39; 
+		ifTrue: [^&#39;sprava firemnich pristroju &#40;servery&#44; pracovni PC&#44; ...&#41;&#39;].
+	pozice = &#39;Manazerka&#39; 
+		ifTrue: 
+			[^&#39;pristup k datum zamnestnancu a prodeje zbozi &#43; rozvrzeni pracovni doby &#43; pridelovani ukolu&#39;].
+	pozice = &#39;Pracovnik skladu&#39; ifTrue: [^&#39;manipulace se zbozim&#39;]</PRE>
+</UL>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Zakaznik
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+adresa :String
+</CODE>
+<BR>
+<CODE>
+objednavky :Set
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+adresa
+</CODE>
+<BR>
+<CODE>
+adresa:
+</CODE>
+<BR>
+<CODE>
+celeJmeno
+</CODE>
+<BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+objednavky
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+Tato trida dedi od tridy &quot;Osoba&quot; instancni promenne &quot;jmeno&quot; a &quot;prijmeni&quot; kvuli spravne identifikaci &#40;tyto promenne dale spojuje pro jednodussi vyuziti metoda &quot;celeJmeno&quot;&#41;&#44; dale ma instancni promennou &quot;adresa&quot; z duvodu dopravy na spravne misto a set &quot;objednavky&quot;&#44; ktera propojuje kazdeho zakaznika se vsemi jeho objednavkami.
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+celeJmeno
+</CODE></B>
+<PRE>
+	^jmeno &#44; &#39; &#39; &#44; prijmeni</PRE>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     adresa := nil.
+     objednavky := Set new.</PRE>
+</UL>
+<HR>
+<H2>Links</H2>
+<A HREF="aDaskalosProject.xml">Data file</A> and 
+<A HREF="aDaskalosProject.st">class source</A>.
+
+<BR>
+
+<BR>
+<CODE>
+Generated by Daskalos - Object Modeling Tutor &#40;C&#41; 2006 V. Merunka
+</CODE>
+
+<BR>
+<CODE>
+May 2&#44; 2024
+</CODE>
+</BODY></HTML>
