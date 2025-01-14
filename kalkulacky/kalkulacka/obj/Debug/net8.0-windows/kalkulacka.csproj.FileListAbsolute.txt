@@ -1,0 +1,16 @@
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\bin\Debug\net8.0-windows\kalkulacka.exe
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\bin\Debug\net8.0-windows\kalkulacka.deps.json
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\bin\Debug\net8.0-windows\kalkulacka.runtimeconfig.json
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\bin\Debug\net8.0-windows\kalkulacka.dll
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\bin\Debug\net8.0-windows\kalkulacka.pdb
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\obj\Debug\net8.0-windows\kalkulacka.Kalkulacka.resources
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\obj\Debug\net8.0-windows\kalkulacka.csproj.GenerateResource.cache
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\obj\Debug\net8.0-windows\kalkulacka.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\obj\Debug\net8.0-windows\kalkulacka.AssemblyInfoInputs.cache
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\obj\Debug\net8.0-windows\kalkulacka.AssemblyInfo.cs
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\obj\Debug\net8.0-windows\kalkulacka.csproj.CoreCompileInputs.cache
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\obj\Debug\net8.0-windows\kalkulacka.dll
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\obj\Debug\net8.0-windows\refint\kalkulacka.dll
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\obj\Debug\net8.0-windows\kalkulacka.pdb
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\obj\Debug\net8.0-windows\kalkulacka.genruntimeconfig.cache
+C:\Users\xkocj030\source\repos\kalkulacky\kalkulacka\obj\Debug\net8.0-windows\ref\kalkulacka.dll

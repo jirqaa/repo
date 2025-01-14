@@ -1,0 +1,16 @@
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\bin\Debug\net8.0-windows\pujcovna.exe
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\bin\Debug\net8.0-windows\pujcovna.deps.json
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\bin\Debug\net8.0-windows\pujcovna.runtimeconfig.json
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\bin\Debug\net8.0-windows\pujcovna.dll
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\bin\Debug\net8.0-windows\pujcovna.pdb
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\obj\Debug\net8.0-windows\pujcovna.Pujcovna.resources
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\obj\Debug\net8.0-windows\pujcovna.csproj.GenerateResource.cache
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\obj\Debug\net8.0-windows\pujcovna.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\obj\Debug\net8.0-windows\pujcovna.AssemblyInfoInputs.cache
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\obj\Debug\net8.0-windows\pujcovna.AssemblyInfo.cs
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\obj\Debug\net8.0-windows\pujcovna.csproj.CoreCompileInputs.cache
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\obj\Debug\net8.0-windows\pujcovna.dll
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\obj\Debug\net8.0-windows\refint\pujcovna.dll
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\obj\Debug\net8.0-windows\pujcovna.pdb
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\obj\Debug\net8.0-windows\pujcovna.genruntimeconfig.cache
+C:\Users\xkocj030\source\repos\pujcovna\pujcovna\obj\Debug\net8.0-windows\ref\pujcovna.dll

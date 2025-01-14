@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kalkulacka", "kalkulacka\kalkulacka.csproj", "{B7B7EC93-FAAF-4C77-9F49-876D9AF2F0B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kalkulackaLepsi", "kalkulackaLepsi\kalkulackaLepsi.csproj", "{AAB15BF7-7D7F-4903-AB90-FC3CA2D692AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7B7EC93-FAAF-4C77-9F49-876D9AF2F0B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7B7EC93-FAAF-4C77-9F49-876D9AF2F0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7B7EC93-FAAF-4C77-9F49-876D9AF2F0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7B7EC93-FAAF-4C77-9F49-876D9AF2F0B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB15BF7-7D7F-4903-AB90-FC3CA2D692AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB15BF7-7D7F-4903-AB90-FC3CA2D692AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB15BF7-7D7F-4903-AB90-FC3CA2D692AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB15BF7-7D7F-4903-AB90-FC3CA2D692AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {873E1DC3-36B8-4C8B-B6B2-104959C6AAD4}
+	EndGlobalSection
+EndGlobal
