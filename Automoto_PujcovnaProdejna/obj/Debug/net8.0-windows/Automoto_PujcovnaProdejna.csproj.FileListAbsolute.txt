@@ -1,0 +1,17 @@
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\bin\Debug\net8.0-windows\Automoto_PujcovnaProdejna.exe
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\bin\Debug\net8.0-windows\Automoto_PujcovnaProdejna.deps.json
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\bin\Debug\net8.0-windows\Automoto_PujcovnaProdejna.runtimeconfig.json
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\bin\Debug\net8.0-windows\Automoto_PujcovnaProdejna.dll
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\bin\Debug\net8.0-windows\Automoto_PujcovnaProdejna.pdb
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\obj\Debug\net8.0-windows\Automoto_PujcovnaProdejna.PujcovnaProdejna.resources
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\obj\Debug\net8.0-windows\Automoto_PujcovnaProdejna.csproj.GenerateResource.cache
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\obj\Debug\net8.0-windows\Automoto_PujcovnaProdejna.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\obj\Debug\net8.0-windows\Automoto_PujcovnaProdejna.AssemblyInfoInputs.cache
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\obj\Debug\net8.0-windows\Automoto_PujcovnaProdejna.AssemblyInfo.cs
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\obj\Debug\net8.0-windows\Automoto_PujcovnaProdejna.csproj.CoreCompileInputs.cache
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\obj\Debug\net8.0-windows\Automoto_PujcovnaProdejna.dll
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\obj\Debug\net8.0-windows\refint\Automoto_PujcovnaProdejna.dll
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\obj\Debug\net8.0-windows\Automoto_PujcovnaProdejna.pdb
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\obj\Debug\net8.0-windows\Automoto_PujcovnaProdejna.genruntimeconfig.cache
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\obj\Debug\net8.0-windows\ref\Automoto_PujcovnaProdejna.dll
+C:\Users\Jirka\source\repos\Automoto_PujcovnaProdejna\obj\Debug\net8.0-windows\Automoto_PujcovnaProdejna.ZakaznikDialog.resources

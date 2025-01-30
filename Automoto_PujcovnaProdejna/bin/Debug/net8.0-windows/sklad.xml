@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfVozidlo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Vozidlo xsi:type="Moto">
+    <Nazev>BMW S1000RR</Nazev>
+    <Vyrobce>BMW</Vyrobce>
+    <CenaKoupe>1500000</CenaKoupe>
+    <CenaVypujcky>5000</CenaVypujcky>
+    <Najeto>10000</Najeto>
+    <RokVyroby>2005</RokVyroby>
+    <Technicka>true</Technicka>
+    <Pristupne>true</Pristupne>
+    <ObjemMotoru>600</ObjemMotoru>
+    <Retez>true</Retez>
+  </Vozidlo>
+  <Vozidlo xsi:type="Moto">
+    <Nazev>BMW S1000RR</Nazev>
+    <Vyrobce>BMW</Vyrobce>
+    <CenaKoupe>1500000</CenaKoupe>
+    <CenaVypujcky>6000</CenaVypujcky>
+    <Najeto>10000</Najeto>
+    <RokVyroby>1990</RokVyroby>
+    <Technicka>true</Technicka>
+    <Pristupne>true</Pristupne>
+    <ObjemMotoru>1200</ObjemMotoru>
+    <Retez>true</Retez>
+  </Vozidlo>
+  <Vozidlo xsi:type="Auto">
+    <Nazev>Mazda MX-5</Nazev>
+    <Vyrobce>Mazda</Vyrobce>
+    <CenaKoupe>150000</CenaKoupe>
+    <CenaVypujcky>2000</CenaVypujcky>
+    <Najeto>100000</Najeto>
+    <RokVyroby>2001</RokVyroby>
+    <Technicka>true</Technicka>
+    <Pristupne>true</Pristupne>
+    <PocetDveri>3</PocetDveri>
+    <Pohon>RWD</Pohon>
+  </Vozidlo>
+  <Vozidlo xsi:type="Auto">
+    <Nazev>Mazda RX-8</Nazev>
+    <Vyrobce>Mazda</Vyrobce>
+    <CenaKoupe>1500000</CenaKoupe>
+    <CenaVypujcky>7500</CenaVypujcky>
+    <Najeto>10000</Najeto>
+    <RokVyroby>2000</RokVyroby>
+    <Technicka>true</Technicka>
+    <Pristupne>true</Pristupne>
+    <PocetDveri>3</PocetDveri>
+    <Pohon>RWD</Pohon>
+  </Vozidlo>
+  <Vozidlo xsi:type="Auto">
+    <Nazev>Mazda Corola</Nazev>
+    <Vyrobce>Mazda</Vyrobce>
+    <CenaKoupe>75000</CenaKoupe>
+    <CenaVypujcky>1000</CenaVypujcky>
+    <Najeto>300000</Najeto>
+    <RokVyroby>1989</RokVyroby>
+    <Technicka>true</Technicka>
+    <Pristupne>true</Pristupne>
+    <PocetDveri>5</PocetDveri>
+    <Pohon>FWD</Pohon>
+  </Vozidlo>
+  <Vozidlo xsi:type="Auto">
+    <Nazev>Mazda RX-7</Nazev>
+    <Vyrobce>Mazda</Vyrobce>
+    <CenaKoupe>2250000</CenaKoupe>
+    <CenaVypujcky>10000</CenaVypujcky>
+    <Najeto>30000</Najeto>
+    <RokVyroby>1990</RokVyroby>
+    <Technicka>true</Technicka>
+    <Pristupne>true</Pristupne>
+    <PocetDveri>3</PocetDveri>
+    <Pohon>RWD</Pohon>
+  </Vozidlo>
+  <Vozidlo xsi:type="Moto">
+    <Nazev>BMW S1000RR</Nazev>
+    <Vyrobce>BMW</Vyrobce>
+    <CenaKoupe>1500000</CenaKoupe>
+    <CenaVypujcky>10000</CenaVypujcky>
+    <Najeto>10000</Najeto>
+    <RokVyroby>2010</RokVyroby>
+    <Technicka>true</Technicka>
+    <Pristupne>true</Pristupne>
+    <ObjemMotoru>1000</ObjemMotoru>
+    <Retez>true</Retez>
+  </Vozidlo>
+  <Vozidlo xsi:type="Moto">
+    <Nazev>BMW S1000RR</Nazev>
+    <Vyrobce>BMW</Vyrobce>
+    <CenaKoupe>1500000</CenaKoupe>
+    <CenaVypujcky>2500</CenaVypujcky>
+    <Najeto>10000</Najeto>
+    <RokVyroby>2001</RokVyroby>
+    <Technicka>true</Technicka>
+    <Pristupne>true</Pristupne>
+    <ObjemMotoru>125</ObjemMotoru>
+    <Retez>false</Retez>
+  </Vozidlo>
+</ArrayOfVozidlo>
